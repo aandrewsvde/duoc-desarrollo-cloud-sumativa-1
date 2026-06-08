@@ -102,7 +102,7 @@ public class GuiaController {
         String s3Key = fecha + "/" + transportista + "/" + archivo;
         try {
             s3Client.deleteObject(DeleteObjectRequest.builder().bucket(bucketName).key(s3Key).build());
-            return ResponseEntity.ok("Archivo " + s3Key + " eliminado de S3 con éxito.");
+            return ResponseEntity.ok("Archivo " + s3Key + " eliminado de S3 con éxito");
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
         }
